@@ -7,9 +7,11 @@ public class bumperControl : MonoBehaviour
     public Collider bola;
     public float multiplier;
     public Color color;
+    public float score;
 
     public audioManager audioManager;
     public VFXManager vfxManager;
+    public scoreManager scoreManager;
 
 
     private Renderer renderer;
@@ -25,7 +27,7 @@ public class bumperControl : MonoBehaviour
         if (collision.collider == bola){
             Rigidbody bolarig = bola.GetComponent<Rigidbody>();
             bolarig.velocity *= multiplier;
-        }
+        
 
         //animasyon
         animator.SetTrigger("hit");
@@ -35,5 +37,8 @@ public class bumperControl : MonoBehaviour
 
         //vfx
         vfxManager.PlayVFX(collision.transform.position);
+
+        scoreManager.AddScore(score);
+        }
     }
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 public class switchControl : MonoBehaviour
@@ -15,9 +14,16 @@ public class switchControl : MonoBehaviour
     public Collider bola;
     public Material offMaterial;
     public Material onMaterial;
+    public float score;
 
     private SwitchState state;
     private Renderer renderer;
+
+    
+    public audioManager audioManager;
+    public VFXManager vfxManager;
+
+    public scoreManager scoreManager;
 
     private void Start() {
         renderer = GetComponent<Renderer>();
@@ -28,6 +34,11 @@ public class switchControl : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other == bola){
             Toggle();
+            //sfx
+        audioManager.PlaySFX2(other.transform.position);
+
+        //vfx
+        vfxManager.PlayVFX2(other.transform.position);
     }
     }
 
@@ -51,6 +62,8 @@ public class switchControl : MonoBehaviour
         else{
             Set(true);
         }
+        
+        scoreManager.AddScore(score);
     }
 
     private IEnumerator Blink(int times){

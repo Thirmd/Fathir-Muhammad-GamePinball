@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ProjekPertama.sln"
+    "dotnet.defaultSolution": "Fathir-Muhammad-GamePinball.sln"
 }

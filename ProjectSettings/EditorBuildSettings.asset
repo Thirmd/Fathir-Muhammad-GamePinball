@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e22d8ebd5f9ac1841abf9e3779187efd
+  - enabled: 1
+    path: Assets/Scenes/FathirMuhammad_Pinball.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: bcb93ed6dc825c24f9a11f86a7d74086
   m_configObjects: {}
